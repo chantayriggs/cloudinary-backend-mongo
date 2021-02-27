@@ -4,11 +4,9 @@ const app = express();
 const mongoose = require('mongoose');
 const routes = require("./routes/image");
 
-const URI = process.env.MONGODB_URI;
-
 const connectDB = async () => {
   console.log(process.env.MONGODB_URI)
-  await mongoose.connect( URI , {
+  await mongoose.connect( process.env.MONGODB_URI , {
     useUnifiedTopology: true,
     useNewUrlParser: true
   });
