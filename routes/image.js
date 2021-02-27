@@ -58,27 +58,27 @@ route.route('/images').get((request, response) => {
 
 // CREATING AN IMAGE
 
-route.route('/image').post((request, response) => {
-  let image = new Image(request.body);
-  image.save()
-      .then(image => {
-          response.status(200).json({'image': 'image added successfully'});
-      })
-      .catch(error => {
-          response.status(400).send('adding new image failed');
-      });
-});
+// route.route('/image').post((request, response) => {
+//   let image = new Image(request.body);
+//   image.save()
+//       .then(image => {
+//           response.status(200).json({'image': 'image added successfully'});
+//       })
+//       .catch(error => {
+//           response.status(400).send('adding new image failed');
+//       });
+// });
 
-// DELETE AN IMAGE
+// // DELETE AN IMAGE
 
-route.route("/delete/:id").delete((request, response) => {
-  let id = request.params.id
-  Image.findByIdAndRemove(id, (error, image) => {
-      if (error) {
-          response.json("Unable to delete image", error)
-      } else {
+// route.route("/delete/:id").delete((request, response) => {
+//   let id = request.params.id
+//   Image.findByIdAndRemove(id, (error, image) => {
+//       if (error) {
+//           response.json("Unable to delete image", error)
+//       } else {
 
-          response.json("Image deleted!")
-      }
-  })
-})
+//           response.json("Image deleted!")
+//       }
+//   })
+// })

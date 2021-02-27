@@ -7,7 +7,7 @@ const routes = require("./routes/image");
 const URI = process.env.MONGODB_URI;
 
 const connectDB = async () => {
-  await mongoose.connect("mongodb+srv://chantay:993961%40Aa@cluster0.bm88x.mongodb.net/cloudinaryImages?retryWrites=true&w=majority", {
+  await mongoose.connect( URI , {
     useUnifiedTopology: true,
     useNewUrlParser: true
   });
