@@ -12,6 +12,7 @@ const connectDB = async () => {
     useNewUrlParser: true
   });
   console.log('db connected');
+  //some changes
 };
 
 connectDB()
