@@ -4,6 +4,10 @@ const app = express()
 const mongoose = require('mongoose')
 const routes = require("./routes/image")
 
+const cors = require('cors')
+
+app.use(cors())
+
 
 const connectDB = async () => {
   await mongoose.connect( process.env.MONGODB_URI , {
