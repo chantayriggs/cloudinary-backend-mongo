@@ -1,22 +1,22 @@
-require('dotenv').config();
-const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
-const routes = require("./routes/image");
+require('dotenv').config()
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
+const routes = require("./routes/image")
+
 
 const connectDB = async () => {
-  console.log(process.env.MONGODB_URI)
   await mongoose.connect( process.env.MONGODB_URI , {
     useUnifiedTopology: true,
     useNewUrlParser: true
-  });
-  console.log('db connected');
-};
+  })
+  console.log('db connected')
+}
 
 connectDB()
 
-app.use(express.json({ extended: false }));
+app.use(express.json({ extended: false }))
 app.use("/", routes)
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000
 
-app.listen(PORT, () => console.log('Server started on port', PORT));
+app.listen(PORT, () => console.log('Server started on port', PORT))
